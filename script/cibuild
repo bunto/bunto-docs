@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -xe
+
+bundle exec bunto docs &
+PASSED="$?"
+PID="$!"
+
+sleep 5
+jobs
+kill $PID
+
+exit $PASSED
